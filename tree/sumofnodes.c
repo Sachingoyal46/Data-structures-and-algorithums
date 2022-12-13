@@ -53,7 +53,7 @@ void preordertraversal(struct node *t)
         preordertraversal(t->right);
     }
 }
-
+//**********************************************************************************
 void postordertraversal(struct node *t)
 {
     if(t!=NULL)
@@ -63,7 +63,7 @@ void postordertraversal(struct node *t)
         printf(" %d ",t->data);
     }
 }
-
+//********************************************************************************
 void inordertraversal(struct node *t)
 {
     if(t!=NULL)
@@ -207,6 +207,14 @@ int isstrictly(struct node *t)
 
 //******************************************************
 
+int sumofnode(struct node *t)
+{
+    int sum=0;
+    sum=countleaf(t) + countN1(t)+ countN2(t);
+    return sum;
+
+}
+//*******************************************
 void main()
 {
     struct node *root=NULL;
@@ -238,6 +246,10 @@ void main()
 
     printf("\n");
     printf("%d",isstrictly(root));
+
+    printf("\n");
+    printf("%d",sumofnode(root));
+
 
     
     // root=makenode('A');
