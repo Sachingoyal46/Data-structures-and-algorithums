@@ -46,7 +46,7 @@ void inordertraversal(struct node *t)
     }
 }
 
-void bst(struct node **t,int x)
+void insert(struct node **t,int x)
 {
     struct node *p,*q;
     p=*t;
@@ -56,7 +56,7 @@ void bst(struct node **t,int x)
         *t=makenode(x);
     }
     else{
-        while(p!=NULL)
+    while(p!=NULL)
     {
         if(x<p->data)
         {
@@ -87,15 +87,16 @@ void bst(struct node **t,int x)
 int main()
 {
     struct node *root=NULL;
-    bst(&root,100);
-      bst(&root,50);
-        bst(&root,70);
-          bst(&root,130);
-            bst(&root,150);
-              bst(&root,20);
-                bst(&root,40);
-                  bst(&root,50);
-                  inordertraversal(root);
+
+    int a[10]={2,34,54,6,35,77,87,56,30,22};
+    root=makenode(a[0]);
+    for(int i=1;i<=9;i++)
+    {
+        insert(&root,a[i]);
+    }
+     inordertraversal(root);
+    
+                 
                
 
 

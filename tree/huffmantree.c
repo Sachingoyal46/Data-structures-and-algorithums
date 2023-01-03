@@ -2,8 +2,13 @@
 #include<stdlib.h>
 struct node
 {
-    int info;
+    // int info;
+     int info;
     struct node *next;
+    struct node *left;
+    struct node *right;
+    
+    char c;
 
 };
 
@@ -131,17 +136,46 @@ dequeue(struct node **start)
     x=delbeg(&(*start));
     return x;
 }
+struct node *huffmantree(char c[],int f[],int n)
+{
+    struct node *pq=NULL,*x,*z,*y;
+    
+    for(int i=0;i<=n-1;i++)
+    {
+        x=getnode();
+        x->info=f[i];
+        x->c=c[i];
+
+        ascendingorderinsertion(pq,x);
+    }
+    for(int i=1;i<=n-1;i++)
+    {
+        x=dequeue(&pq);
+        y=dequeue(&pq);
+        z=getnode();
+        z->left=x;
+        z->right=y;
+        z->info=x->info+y->info;
+        ascendingorderinsertion(pq,z);
+
+    }
+    return dequeue(&pq);
+    
+
+}
+
+    
+
 int main()
 {
     struct node *start,*p;
     start=NULL;
-    int x;
-   ascendingorderinsertion(&start,10);
     ascendingorderinsertion(&start,10);
-     ascendingorderinsertion(&start,10);
-      ascendingorderinsertion(&start,10);
-   traverse(start);
-  
+    char c[6]={'a','m','i','c','x'};
+    int f[6]={35,20,25,15,5},n=5;
+    huffmantree(c,f,n);
+
+
 
 
 

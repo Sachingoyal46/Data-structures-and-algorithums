@@ -56,9 +56,6 @@ void bst(struct node **t,int x)
         *t=makenode(x);
     }
     else{
-
-    
-    
     while(p!=NULL)
     {
         if(x<p->data)

@@ -77,8 +77,4 @@ int main()
   y=Dequeue(&myQ);
   printf("\nDeleted element is %c",y);
    Enqueue(&myQ,c11);
-  
-  
-    
-  
 }
