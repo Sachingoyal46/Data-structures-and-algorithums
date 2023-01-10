@@ -62,7 +62,7 @@ char stacktop() {
 
 int main()
 {
-    char exp[]="()()())";
+    char exp[]="()()()";
     int i=0;
     char x;
     int flag=1;

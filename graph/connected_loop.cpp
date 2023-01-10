@@ -8,12 +8,12 @@ int DFS_visited(vector<int>adj[],vector<int>&status,int i,int element)
    
    status[i]=1;
    cout<<i;
-   element=element+1;
+  
    for(int j=0;j<adj[i].size();j++)
    {
     if(status[adj[i][j]]==0)
-    {
-        DFS_visited(adj,status,adj[i][j],element);
+    {    element=element+1;
+       element= DFS_visited(adj,status,adj[i][j],element);
     }
    }
    return element;
@@ -29,7 +29,7 @@ void DFS(vector<int>adj[],int n)
     {
         if(status[i]==0)
         {
-            int element=0;
+            int element=1;
            int ele= DFS_visited(adj,status,i,element);
             count=count +1;
             elementinconnectedcomponent.push_back(ele);
@@ -40,7 +40,7 @@ void DFS(vector<int>adj[],int n)
    for(int i=0;i<count;i++)
    {
     cout<<"component"<<i+1<<"has"
-    <<elementinconnectedcomponent[i]<<"elements";
+    <<elementinconnectedcomponent[i]<<"elements"<<endl;
    }
 }
 
@@ -78,6 +78,7 @@ int main()
     }
     cout<<"order of DFS is:";
     DFS(adj,n);
+    cout<<endl;
     return 0;
     
 

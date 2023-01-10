@@ -5,7 +5,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int DFS_visited(vector<int>adj[],vector<int>&status,int i)
+ int DFS_visited(vector<int>adj[],vector<int>&status,int i)
 {
    
    status[i]=1;
@@ -29,7 +29,7 @@ void DFS(vector<int>adj[],int n)
             DFS_visited(adj,status,i);
         }
     }
-    status[0]=1;
+    // status[0]=1;
 }
 
 
@@ -45,7 +45,7 @@ int main()
    vector<int>adj[n];
    cout<<"enter the number of edges";
    cin>>e;
-   for(int i=0;i<e;i++)
+   for(int i=1;i<e;i++)
    {    
     int a,b;
     cout<<"enter the endpoints of edges"<<i<<":";
@@ -55,7 +55,7 @@ int main()
    }
  for(int i=0;i<n;i++)
     {
-        int j;
+        int j=0;
         cout<<i<<":";
         for(j=0;j<adj[i].size();j++)
         {
