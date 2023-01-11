@@ -70,7 +70,7 @@ int main()
     char y;
     
     struct Queue CQ;
-    initialize(&myQ);
+    initialize(&CQ);
     enqueue(&CQ,'A');
     enqueue(&CQ,'B');
     enqueue(&CQ,'C');
