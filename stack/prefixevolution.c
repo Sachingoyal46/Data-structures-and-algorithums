@@ -90,6 +90,7 @@ int evaluate(int a,int b,char op)
         case '*': return a*b;
         case '-': return a-b;
         case '&': return a&b;
+        case '^' : return pow(a,b);
         default: return a/b;
         
     }
@@ -100,18 +101,18 @@ int main()
     int x,i=0,val,b,a;
     char ps[20];
     char symb;
-    
-    strrev(ps);
 
     initialize();
+    printf("enter the prefix expression\n");
     scanf("%s",ps);
+    strrev(ps);
 
     while(ps[i]!='\0')
     {
         symb=ps[i];
         if(symb>='0' && symb<='9')
         {
-            push(symb-0);
+            push(symb-48);
 
         }
         else{

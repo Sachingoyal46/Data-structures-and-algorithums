@@ -1,1 +1,1 @@
- // int i=0;
+initialize(s);

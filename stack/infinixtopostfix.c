@@ -83,9 +83,9 @@ int precedence(char a, char b)
                           if (b == '^') {
                           return FALSE;
                                      }
-                    else {
-                     return TRUE;
-                            }
+                                else {
+                                return TRUE;
+                                       }
                  } 
                  else {
                          if (b == '+' || b == '-') {
@@ -102,7 +102,7 @@ int precedence(char a, char b)
 }
 void infix_to_postfix(char *infix) {
   int i = 0, j = 0;
-  char prefix[20], s, x;
+  char postfix[20], s, x;
   initialize();
   
   while (infix[i] != '\0') {
@@ -110,13 +110,13 @@ void infix_to_postfix(char *infix) {
     i++;
     if ((s >= 'a' && s <= 'z') || (s >= 'A' && s <= 'Z') ||
         (s >= '0' && s <= '9')) {
-      prefix[j] = s;
+      postfix[j] = s;
       j++;
     } else {
       while (!isempty() && precedence(stacktop(),s)) {
       
         x = pop();
-        prefix[j] = x;
+        postfix[j] = x;
         j++;
       }
       if(s==')')
@@ -130,14 +130,14 @@ void infix_to_postfix(char *infix) {
   }
   while (!isempty()) {
     x = pop();
-    prefix[j] = x;
+    postfix[j] = x;
     j++;
   }
   
-  prefix[j] = '\0';
-  printf("%s", prefix);
+  postfix[j] = '\0';
+  printf("%s", postfix);
 }
 int main() {
-  char infix[] = "a+(b*c/d)";
+  char infix[] = "(a*b^c+d)";
   infix_to_postfix(infix);
 }
