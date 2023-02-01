@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
 int n;
 void arrayinsert(int *a,int i,int x)
@@ -35,7 +36,8 @@ void display(int *a)
 {
     int i;
     for(i=0;i<n;i++)
-    printf("\t%d",a[i]);
+    cout<<a[i]<<endl;
+    // printf("\t%d",a[i]);
 }
 
 int dequeue(int *a)
@@ -55,15 +57,15 @@ int main()
     enqueue(a,100);
      enqueue(a,20);
       enqueue(a,30);
-       enqueue(a,120);
+       enqueue(a,1500);
         enqueue(a,10);
 
         display(a);
-        // printf("\tdeleted element is %d\n",dequeue(a));
-        // printf("\tdeleted element is %d\n",dequeue(a));
-        // printf("\tdeleted element is %d\n",dequeue(a));
-        // printf("\tdeleted element is %d\n",dequeue(a));
-        // printf("\tdeleted element is %d\n",dequeue(a));
+        cout<<"\tdeleted element is "<<dequeue(a)<<endl;
+        cout<<"\tdeleted element is "<<dequeue(a)<<endl;
+        cout<<"\tdeleted element is "<<dequeue(a)<<endl;
+        cout<<"\tdeleted element is "<<dequeue(a)<<endl;
+        cout<<"\tdeleted element is "<<dequeue(a)<<endl;
         return 0;
 
 }

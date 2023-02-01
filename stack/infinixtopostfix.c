@@ -138,6 +138,6 @@ void infix_to_postfix(char *infix) {
   printf("%s", postfix);
 }
 int main() {
-  char infix[] = "(a*b^c+d)";
+  char infix[] = "(A-B)*(((C-D*E)/F)/G)";
   infix_to_postfix(infix);
 }
